@@ -25,30 +25,30 @@
             >
                 <columns>
                     <Column width="12em">
-                        <Text text="Product" />
+                        <Text text="{i18n>Products}" />
                     </Column>
                     <Column
                         minScreenWidth="Tablet"
                         demandPopin="true"
                     >
-                        <Text text="Supplier" />
+                        <Text text="{i18n>Supplier}" />
                     </Column>
                     <Column
                         minScreenWidth="Desktop"
                         demandPopin="true"
                         hAlign="End"
                     >
-                        <Text text="Dimensions" />
+                        <Text text="{i18n>Dimensions}" />
                     </Column>
                     <Column
                         minScreenWidth="Desktop"
                         demandPopin="true"
                         hAlign="Center"
                     >
-                        <Text text="Weight" />
+                        <Text text="{i18n>Weight}" />
                     </Column>
                     <Column hAlign="End">
-                        <Text text="Price" />
+                        <Text text="{i18n>Price}" />
                     </Column>
                 </columns>
                 <items>
