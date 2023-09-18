@@ -16,7 +16,7 @@
         <items>
         <Button icon="sap-icon://world" press="onChangeLanguage" />
             <Button id="themeButton" press="setDark" icon="{iconModel>/icon}" />
-            <SearchField liveChange=".onSearch" placeholder="{i18n>Products}"/>
+            <SearchField liveChange=".onSearch" placeholder="{i18n>Search}"/>
         </items>
     </FlexBox>
             <Table
