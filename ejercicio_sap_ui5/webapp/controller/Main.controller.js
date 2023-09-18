@@ -1,6 +1,7 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "com/proy/ejerciciosapui5/util/Formatter",
+    "sap/ui/model/json/JSONModel",
     "com/proy/ejerciciosapui5/util/Constants",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
@@ -9,7 +10,7 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Formatter, Constants, Filter, FilterOperator) {
+    function (Controller, Formatter, JSONModel, Constants, Filter, FilterOperator) {
         "use strict";
 
         return Controller.extend("com.proy.ejerciciosapui5.controller.Main", {
@@ -26,6 +27,10 @@ sap.ui.define([
                 var oResourceModel = this.getOwnerComponent().getModel(Constants.model.i18n);
                 oResourceModel.enhance({ bundleName: Constants.model.bundleName });
                 sap.ui.getCore().getConfiguration().setLanguage(Constants.model.languageEn);
+                var oModel = new JSONModel({
+                    icon: Constants.model.iconDark
+                });
+                this.getView().setModel(oModel, Constants.model.iconModel);
             },
             onSearch: function(oEvent) {
                 var aFilter = [];
@@ -37,6 +42,17 @@ sap.ui.define([
                 var oTable = this.byId(Constants.model.idProductsTable);
                 var oBindingItems = oTable.getBinding(Constants.model.items);
                 oBindingItems.filter(aFilter, Constants.model.FilterApplication);
-            }                                
+            },
+            setDark: function () {
+                const currentTheme = sap.ui.getCore().getConfiguration().getTheme();
+                const newTheme = currentTheme === Constants.model.sapFioriDark ? Constants.model.sapFioriLight : Constants.model.sapFioriDark;
+                sap.ui.getCore().applyTheme(newTheme);
+                const button = this.byId(Constants.model.themeButton);
+                if (currentTheme === Constants.model.sapFioriDark) {
+                    button.setIcon(Constants.model.sapIconDark);
+                } else {
+                    button.setIcon(Constants.model.sapIconLight);
+                }
+            }                      
         });
     });

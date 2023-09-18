@@ -11,7 +11,14 @@ sap.ui.define([], function (){
             FilterApplication: "FilterApplication",
             propertyToFilter: "Name",
             bundleName: "com.proy.ejerciciosapui5.i18n.i18n",
-            languageEn: "en"
+            languageEn: "en",
+            iconDark: "sap-icon://dark-mode",
+            iconModel: "iconModel",
+            sapFioriDark: "sap_fiori_3_dark",
+            sapFioriLight: "sap_fiori_3",
+            themeButton: "themeButton",
+            sapIconDark: "sap-icon://dark-mode",
+            sapIconLight:"sap-icon://dark-light"
         }
     };
 }, true)

@@ -12,7 +12,12 @@
         showNavButton="false"
     >
         <content>
-		<SearchField liveChange=".onSearch" />
+		<FlexBox alignItems="Center" justifyContent="Start">
+        <items>
+            <Button id="themeButton" press="setDark" icon="{iconModel>/icon}" />
+            <SearchField liveChange=".onSearch" />
+        </items>
+    </FlexBox>
             <Table
                 id="idProductsTable"
                 inset="false"
