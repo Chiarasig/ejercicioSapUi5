@@ -31,6 +31,7 @@ sap.ui.define([
                     icon: Constants.model.iconDark
                 });
                 this.getView().setModel(oModel, Constants.model.iconModel);
+                sap.ui.getCore().getConfiguration().setLanguage(Constants.model.languageEn);
             },
             onSearch: function(oEvent) {
                 var aFilter = [];
@@ -49,10 +50,17 @@ sap.ui.define([
                 sap.ui.getCore().applyTheme(newTheme);
                 const button = this.byId(Constants.model.themeButton);
                 if (currentTheme === Constants.model.sapFioriDark) {
-                    button.setIcon(Constants.model.sapIconDark);
+                    button.setIcon(Constants.model.iconDark);
                 } else {
                     button.setIcon(Constants.model.sapIconLight);
                 }
-            }                      
+            },
+            onChangeLanguage: function () {
+                var sCurrentLanguage = sap.ui.getCore().getConfiguration().getLanguage();
+                var sNewLanguage = sCurrentLanguage === Constants.model.languageEn ? Constants.model.languageEs : Constants.model.languageEn;
+                sap.ui.getCore().getConfiguration().setLanguage(sNewLanguage);
+                var oResourceModel = this.getOwnerComponent().getModel(Constants.model.i18n);
+                oResourceModel.refresh();
+            }                   
         });
     });

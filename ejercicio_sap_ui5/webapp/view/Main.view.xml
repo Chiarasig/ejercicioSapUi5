@@ -14,8 +14,9 @@
         <content>
 		<FlexBox alignItems="Center" justifyContent="Start">
         <items>
+        <Button icon="sap-icon://world" press="onChangeLanguage" />
             <Button id="themeButton" press="setDark" icon="{iconModel>/icon}" />
-            <SearchField liveChange=".onSearch" />
+            <SearchField liveChange=".onSearch" placeholder="{i18n>Products}"/>
         </items>
     </FlexBox>
             <Table
