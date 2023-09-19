@@ -8,7 +8,7 @@ sap.ui.define([], function (){
             productsJSON: "/localService/Products.json",
             idProductsTable: "idProductsTable",
             items: "items",
-            FilterApplication: "FilterApplication",
+            filterApplication: "FilterApplication",
             propertyToFilter: "Name",
             bundleName: "com.proy.ejerciciosapui5.i18n.i18n",
             languageEn: "en",

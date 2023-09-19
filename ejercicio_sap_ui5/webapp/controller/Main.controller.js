@@ -42,7 +42,7 @@ sap.ui.define([
                 }
                 var oTable = this.byId(Constants.model.idProductsTable);
                 var oBindingItems = oTable.getBinding(Constants.model.items);
-                oBindingItems.filter(aFilter, Constants.model.FilterApplication);
+                oBindingItems.filter(aFilter, Constants.model.filterApplication);
             },
             setDark: function () {
                 const currentTheme = sap.ui.getCore().getConfiguration().getTheme();

@@ -12,13 +12,26 @@
         showNavButton="false"
     >
         <content>
-		<FlexBox alignItems="Center" justifyContent="Start">
-        <items>
-        <Button icon="sap-icon://world" press="onChangeLanguage" />
-            <Button id="themeButton" press="setDark" icon="{iconModel>/icon}" />
-            <SearchField liveChange=".onSearch" placeholder="{i18n>Search}"/>
-        </items>
-    </FlexBox>
+            <FlexBox
+                alignItems="Center"
+                justifyContent="Start"
+            >
+                <items>
+                    <Button
+                        icon="sap-icon://world"
+                        press="onChangeLanguage"
+                    />
+                    <Button
+                        id="themeButton"
+                        press="setDark"
+                        icon="{iconModel>/icon}"
+                    />
+                    <SearchField
+                        liveChange=".onSearch"
+                        placeholder="{i18n>Search}"
+                    />
+                </items>
+            </FlexBox>
             <Table
                 id="idProductsTable"
                 inset="false"

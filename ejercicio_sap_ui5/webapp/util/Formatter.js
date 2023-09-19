@@ -5,12 +5,10 @@ sap.ui.define(function() {
 
 		weightState :  function (fMeasure, sUnit) {
 
-			// Boarder values for different status of weight
 			var fMaxWeightSuccess = 1;
 			var fMaxWeightWarning = 5;
 			var fAdjustedMeasure = parseFloat(fMeasure);
 
-			// if the value of fMeasure is not a number, no status will be set
 			if (isNaN(fAdjustedMeasure)) {
 				return "None";
 			} else {
@@ -34,4 +32,4 @@ sap.ui.define(function() {
 
 	return Formatter;
 
-}, /* bExport= */ true);
+}, true);
