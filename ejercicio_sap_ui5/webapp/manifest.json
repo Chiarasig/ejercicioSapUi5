@@ -83,6 +83,20 @@
                     "target": [
                         "TargetMain"
                     ]
+                },
+                {
+                    "name": "RouteOther",
+                    "pattern": "Other",
+                    "target": [
+                        "TargetOther"
+                    ]
+                },
+                {
+                    "name": "RouteView3",
+                    "pattern": "View3",
+                    "target": [
+                        "TargetView3"
+                    ]
                 }
             ],
             "targets": {
@@ -92,6 +106,20 @@
                     "clearControlAggregation": false,
                     "viewId": "Main",
                     "viewName": "Main"
+                },
+                "TargetOther": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Other",
+                    "viewName": "Other"
+                },
+                "TargetView3": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "View3",
+                    "viewName": "View3"
                 }
             }
         },

@@ -5,7 +5,17 @@
     xmlns:core="sap.ui.core"
     xmlns="sap.m"
 >
-    <Page
+<!--     <VBox>
+        <core:Fragment
+            fragmentName="com.proy.ejerciciosapui5.fragments.fragmentSimple"
+            type="XML"
+        />
+        <core:Fragment
+            fragmentName="com.proy.ejerciciosapui5.fragments.fragmentSimple1"
+            type="XML"
+        />
+    </VBox> -->
+     <Page
         showHeader="false"
         enableScrolling="true"
         class="sapUiContentPadding"
@@ -29,6 +39,14 @@
                     <SearchField
                         liveChange=".onSearch"
                         placeholder="{i18n>Search}"
+                    />
+                    <Button
+                        press="onPress"
+                        text="{i18n>OpenDialog}"
+                    />
+                    <Button
+                        press="navTo"
+                        text="{i18n>NavigateToOther}"
                     />
                 </items>
             </FlexBox>

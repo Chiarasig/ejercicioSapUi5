@@ -18,7 +18,10 @@ sap.ui.define([], function (){
             sapFioriLight: "sap_fiori_3",
             themeButton: "themeButton",
             sapIconLight:"sap-icon://light-mode",
-            languageEs: "es"
+            languageEs: "es",
+            routeOther: "RouteOther",
+            routeView3: "RouteView3",
+            app: "App"
         }
     };
 }, true)

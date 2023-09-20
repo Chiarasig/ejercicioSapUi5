@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<Dialog id="idDialog" title="{i18n>Message}" type="Message">
+<content>
+<IllustratedMessage 
+enableDefaultTitleAndDescription="false"
+title="{i18n>OpenFragment}"
+description="{i18n>GoodJob}"
+illustrationType="sapIllus-SuccessBalloon"
+/>
+</content>
+<footer>
+<OverflowToolbar >
+<ToolbarSpacer/>
+<Button text="{i18n>Close}" press="onCloseDialog" type="Emphasized" class="sapUiSmallMarginBottom sapUiSmallMarginTop"/>
+</OverflowToolbar>
+</footer>
+</Dialog>
+</core:FragmentDefinition>

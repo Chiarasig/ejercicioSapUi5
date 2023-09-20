@@ -5,12 +5,13 @@ sap.ui.define([
     "com/proy/ejerciciosapui5/util/Constants",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "sap/ui/model/Sorter"
+    "sap/ui/core/Fragment",
+    "com/proy/ejerciciosapui5/util/Commons"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Formatter, JSONModel, Constants, Filter, FilterOperator) {
+    function (Controller, Formatter, JSONModel, Constants, Filter, FilterOperator, Fragment, Commons ) {
         "use strict";
 
         return Controller.extend("com.proy.ejerciciosapui5.controller.Main", {
@@ -33,7 +34,7 @@ sap.ui.define([
                 this.getView().setModel(oModel, Constants.model.iconModel);
                 sap.ui.getCore().getConfiguration().setLanguage(Constants.model.languageEn);
             },
-            onSearch: function(oEvent) {
+            onSearch: function (oEvent) {
                 var aFilter = [];
                 const sQuery = oEvent.getSource().getValue();
                 if (sQuery && sQuery.length > 0) {
@@ -61,6 +62,29 @@ sap.ui.define([
                 sap.ui.getCore().getConfiguration().setLanguage(sNewLanguage);
                 var oResourceModel = this.getOwnerComponent().getModel(Constants.model.i18n);
                 oResourceModel.refresh();
-            }                   
+            },
+            onPress: function(){
+                let oView = this.getView();
+                if(!this.oFragment){
+                    Fragment.load({
+                        id: oView.getId(),
+                        name: "com.proy.ejerciciosapui5.fragments.fragmentEjemplo",
+                        controller: this
+                    }).then(function(oDialog){
+                        this.oFragment = oDialog;
+                        this.getView().addDependent(this.oFragment);
+                        this.oFragment.open();
+                    }.bind(this));
+                    return;
+                }else{
+                    this.oFragment.open()
+                }
+            },
+            onCloseDialog: function(){
+                this.oFragment.close()
+            },
+            navTo: function(){
+                Commons.navTo(this, Constants.model.routeOther)
+            }      
         });
     });
